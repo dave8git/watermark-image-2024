@@ -13,14 +13,16 @@ const addTextWatermarkToImage = async function(inputFile, outputFile, text) {
         };
         image.print(font, 0, 0, textData, image.getWidth(), image.getHeight());
         await image.quality(100).writeAsync(outputFile);
+
+        console.log('Sukces!');
+        startApp(); 
     } 
     catch(error) {
         console.log('Something went wrong... Try again!');
     }
    
 
-    console.log('Sukces!');
-    startApp(); 
+  
 };
 
 //addTextWatermarkToImage('./best_spire.jpg', './test-with-watermark.jpg', 'Hello world');
@@ -36,14 +38,13 @@ const addImageWatermarkToImage = async function(inputFile, outputFile, watermark
           opacitySource: 0.5,
         });
         await image.quality(100).writeAsync(outputFile);
+
+        console.log('Sukces!');
+        startApp(); 
     } 
     catch(error) {
         console.log('Something went wrong... Try again!');
     }
-   
-
-    console.log('Sukces!');
-    startApp(); 
   };
   
  //addImageWatermarkToImage('./best_spire.jpg', './test-with-watermark2.jpg', './logo.png');
